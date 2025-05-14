@@ -1,0 +1,18 @@
+{
+  "name": "bright-data-mcp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@brightdata/mcp": "^1.8.1",
+    "dotenv": "^16.5.0",
+    "openai": "^4.98.0",
+    "playwright": "^1.52.0"
+  }
+}
