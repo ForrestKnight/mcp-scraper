@@ -1,6 +1,6 @@
 # 🧪 MCP AI Travel Agent (Demo Project)
 
-A simple CLI project that combines Bright Data’s **Browser API (MCP)** with **OpenAI** to scrape hotel listings and generate a 3-day travel itinerary using AI.
+A simple CLI project that combines Bright Data’s **Browser API (MCP)** with **OpenAI** to scrape hotel listings and generate a 3-day travel itinerary using AI (which is just the example used, but you can use it for any scraping task).
 
 This is **not** a full-featured travel planner — it's a real-world, minimal example that shows:
 - How to bypass bot detection on modern websites using Bright Data's MCP
@@ -29,8 +29,8 @@ I made this for a video to show how to use MCP with OpenAI and Playwright.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/mcp-ai-travel-agent.git
-cd mcp-ai-travel-agent
+git clone https://github.com/forrestknight/mcp-scraper.git
+cd mcp-scraper
 ```
 
 ### 2. Install dependencies
