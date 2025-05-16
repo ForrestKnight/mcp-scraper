@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.51.0",
     "@brightdata/mcp": "^1.8.1",
     "dotenv": "^16.5.0",
     "openai": "^4.98.0",

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 require('dotenv').config();
 const { chromium } = require('playwright');
-const { OpenAI } = require('openai');
+const { Anthropic } = require('@anthropic-ai/sdk');
 
 (async () => {
   const browser = await chromium.connectOverCDP(process.env.PLAYWRIGHT_WS_ENDPOINT);
@@ -32,12 +32,20 @@ const { OpenAI } = require('openai');
 
   const prompt = `Here are some hotels in ${city}:\n${hotels.map(h => `${h.title} - ${h.price}, Rated: ${h.rating}`).join('\n')}\nCreate a 3-day trip plan based on these.`;
 
-  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-  const res = await openai.chat.completions.create({
-    model: 'gpt-4',
-    messages: [{ role: 'user', content: prompt }]
+  const res = await anthropic.messages.create({
+    model: 'claude-3-7-sonnet-20250219',
+    max_tokens: 1000,
+    temperature: 1,
+    messages: [{
+      role: 'user',
+      content: [{
+        type: 'text',
+        text: prompt
+      }]
+    }]
   });
 
-  console.log('\n📅 Itinerary:\n', res.choices[0].message.content);
+  console.log('\n📅 Itinerary:\n', res.content[0].text);
 })();
